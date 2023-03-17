@@ -1,7 +1,9 @@
 How to use:
 ====
 
+![How to use](./demo.mp4)
 
+Example file: https://docs.google.com/document/d/1ZBw2Yv39hucRXpPvJNDya-xy2Q23EKOBJ7eaGGm2el4
 
 How to deploy:
 ====

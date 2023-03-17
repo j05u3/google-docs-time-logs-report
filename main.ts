@@ -19,6 +19,22 @@ interface DayWithTasks {
   tasks: Task[];
 }
 
+// main function
+function durationsReport() {
+  const daysWithTasks = calculateAllDaysTasks();
+  Logger.log('Showing durations for all days:');
+  for (const dayWithTasks of daysWithTasks) {
+    Logger.log("");
+    Logger.log(`Day: ${dayWithTasks.day}`);
+    const totalDuration = dayWithTasks.tasks.reduce((acc, task) => acc + task.duration, 0);
+    Logger.log(`Total duration: ${totalDuration} minutes`);
+    const brTime = sumUpDurationsForRegex(dayWithTasks.tasks, /(break|comida)/i);
+    Logger.log(`Breaks/comida: ${brTime} minutes`);
+    Logger.log(`Not Breaks/comida: ${totalDuration - brTime} minutes`);
+  }
+}
+
+
 function readAllDaysWithEntries() {
   const daysWithEntries = new Array<DayWithEntries>();
   // get all the HEADING2 titles
@@ -125,28 +141,3 @@ function calculateAllDaysTasks() {
     };
   });
 }
-
-function durationsReport() {
-  const daysWithTasks = calculateAllDaysTasks();
-  Logger.log('Showing durations for all days:');
-  for (const dayWithTasks of daysWithTasks) {
-    Logger.log("");
-    Logger.log(`Day: ${dayWithTasks.day}`);
-    const totalDuration = dayWithTasks.tasks.reduce((acc, task) => acc + task.duration, 0);
-    Logger.log(`Total duration: ${totalDuration} minutes`);
-    const brTime = sumUpDurationsForRegex(dayWithTasks.tasks, /(break|comida)/i);
-    Logger.log(`Breaks/comida: ${brTime} minutes`);
-    Logger.log(`Not Breaks/comida: ${totalDuration - brTime} minutes`);
-  }
-}
-
-function myFunction() {
-  const doc = DocumentApp.getActiveDocument();
-  const body = doc.getBody();
-  const rowsData = [['Plants', 'Animals'], ['Ficus', 'Goat'], ['Basil', 'Cat'], ['Moss', 'Frog']];
-  body.insertParagraph(0, doc.getName())
-    .setHeading(DocumentApp.ParagraphHeading.HEADING1);
-  const table = body.appendTable(rowsData);
-  table.getRow(0).editAsText().setBold(true);
-}
-

@@ -1,13 +1,18 @@
+How to use:
+====
 
-How to use this repo:
+
+
+How to deploy:
 ====
 
 1. Install clasp: `npm install -g @google/clasp`
 2. Login to your Google account: `clasp login`
-3. Enable the Google Apps Script API: https://script.google.com/home/usersettings (not sure if this is necessary)
-4. Make changes to the code (`main.ts`)
-5. Install libraries: `npm i`
-6. Deploy: `clasp push`
+3. Enable the Google Apps Script API: https://script.google.com/home/usersettings
+4. Change the scriptId on `.clasp.json` to the scriptId of your Google Apps Script project (you can find it on the URL when you open the script on the browser)
+5. Make the desired changes to the code (`main.ts`)
+6. Install libraries: `npm i`
+7. Deploy: `clasp push`
 
 References used:
 ====

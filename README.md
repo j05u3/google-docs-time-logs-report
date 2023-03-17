@@ -1,7 +1,7 @@
 How to use:
 ====
 
-![How to use](./demo.mp4)
+https://user-images.githubusercontent.com/7897132/225855719-adbe8e63-aba2-4ea4-b98b-ad065713c27c.mp4
 
 Example file: https://docs.google.com/document/d/1ZBw2Yv39hucRXpPvJNDya-xy2Q23EKOBJ7eaGGm2el4
 
